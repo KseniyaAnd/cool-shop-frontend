@@ -1,0 +1,13 @@
+<mat-form-field class="w-full " appearance="fill">
+  <input 
+    matInput 
+    type="text" 
+    [value]="value()" 
+    (input)="onInput($event)">
+   @if (value()) {
+    <mat-icon matSuffix (click)="clearValue()" style="cursor: pointer;">close</mat-icon>
+  } @else {
+    <mat-icon matSuffix>search</mat-icon>
+  }
+</mat-form-field>
+

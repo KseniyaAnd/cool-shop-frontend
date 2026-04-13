@@ -1,0 +1,27 @@
+<header class="fixed top-0 left-0 w-full bg-white shadow-md z-50">
+  <div class="container mx-auto px-35 py-8 flex items-center justify-between gap-10">
+    <div class="flex justify-center flex-shrink-0">
+      <app-logo logoSrc="/images/logo.png" logoAlt="MainLogo" class="block" />
+      <h2 class="text-2xl font-bold mb-2">CoolShop</h2>
+    </div>
+
+    <div class="flex-1">
+      <app-search-bar />
+    </div>
+
+    <div class="flex items-center gap-4 flex-shrink-0">
+      <button class="relative p-2 text-gray-600 hover:text-blue-600 transition-colors duration-200">
+        <mat-icon class="text-2xl">shopping_cart</mat-icon>
+        <span
+          class="absolute top-0 right-0 -mt-1 -mr-1 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center"
+        >
+          0
+        </span>
+      </button>
+
+      <button class="p-2 text-gray-600 hover:text-blue-600 transition-colors duration-200">
+        <mat-icon class="text-2xl">person</mat-icon>
+      </button>
+    </div>
+  </div>
+</header>
