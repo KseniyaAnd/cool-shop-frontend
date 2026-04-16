@@ -1,40 +1,46 @@
-import js from '@eslint/js';
 import globals from 'globals';
 import prettier from 'eslint-config-prettier';
+import unusedImports from 'eslint-plugin-unused-imports';
+import tseslint from '@typescript-eslint/eslint-plugin';
+import tsparser from '@typescript-eslint/parser';
 
 export default [
-  js.configs.recommended,
   prettier,
 
   {
-    files: ['**/*.{js,mjs,cjs}'],
+    files: ['**/*.ts'],
+
     languageOptions: {
-      ecmaVersion: 'latest',
-      sourceType: 'module',
+      parser: tsparser,
+      parserOptions: {
+        projectService: true,
+      },
       globals: {
         ...globals.browser,
-        ...globals.node,
       },
     },
+
+    plugins: {
+      '@typescript-eslint': tseslint,
+      'unused-imports': unusedImports,
+    },
+
     rules: {
-      'no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
-      'no-undef': 'error',
+      'no-unused-vars': 'off',
+
+      'unused-imports/no-unused-imports': 'error',
+
+      'unused-imports/no-unused-vars': [
+        'warn',
+        {
+          vars: 'all',
+          varsIgnorePattern: '^_',
+          args: 'after-used',
+          argsIgnorePattern: '^_',
+        },
+      ],
+
       'no-console': 'warn',
-      'no-debugger': 'error',
-
-      semi: ['error', 'always'],
-      quotes: ['error', 'single'],
-      indent: ['error', 2],
-      'comma-dangle': ['error', 'always-multiline'],
-
-      eqeqeq: ['error', 'always'],
-      curly: ['error', 'all'],
-      'no-eval': 'error',
-      'no-implied-eval': 'error',
-
-      'consistent-return': 'error',
-      'no-var': 'error',
-      'prefer-const': 'error',
     },
   },
 ];

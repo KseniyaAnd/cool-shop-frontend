@@ -1,11 +1,10 @@
 import { Component, signal } from '@angular/core';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
-import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-search-bar',
-  imports: [MatInputModule, MatIconModule, MatButtonModule],
+  imports: [MatInputModule, MatIconModule],
   templateUrl: './search-bar.html',
   styleUrl: './search-bar.scss',
 })
