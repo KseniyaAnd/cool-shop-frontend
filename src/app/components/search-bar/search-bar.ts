@@ -1,20 +1,16 @@
-import { Component, signal } from '@angular/core';
+import { Component, model } from '@angular/core';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-search-bar',
-  imports: [MatInputModule, MatIconModule],
+  imports: [FormsModule, MatInputModule, MatIconModule],
   templateUrl: './search-bar.html',
   styleUrl: './search-bar.scss',
 })
 export class SearchBar {
-  value = signal<string>('Clear me');
-
-  onInput(event: Event): void {
-    const input = event.target as HTMLInputElement;
-    this.value.set(input.value);
-  }
+  value = model<string>('Clear me');
 
   clearValue(): void {
     this.value.set('');
