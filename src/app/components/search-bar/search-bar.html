@@ -1,5 +1,5 @@
 <mat-form-field class="w-full" appearance="fill">
-  <input matInput type="text" [value]="value()" (input)="onInput($event)" />
+  <input matInput type="text" [(ngModel)]="value" placeholder="Enter name of the product" />
   @if (value()) {
     <mat-icon matSuffix (click)="clearValue()" style="cursor: pointer">close</mat-icon>
   } @else {
