@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { SearchBar } from "../search-bar/search-bar";
-import { Logo } from "../logo/logo";
-import { MatIcon } from "@angular/material/icon";
+import { SearchBar } from '../search-bar/search-bar';
+import { Logo } from '../logo/logo';
+import { MatIcon } from '@angular/material/icon';
 
 @Component({
   selector: 'app-header',
