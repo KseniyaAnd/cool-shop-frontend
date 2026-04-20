@@ -1,6 +1,7 @@
 import { Component, inject, signal } from '@angular/core';
-import { ProductCard } from '../../components/product-card/product-card';
-import { Product, Products } from '../../services/products';
+import { Products } from '../../services/products';
+import { ProductCard } from '../product-card/product-card';
+import { Product } from '../../types/interfaces/product.interface';
 
 @Component({
   selector: 'app-home',

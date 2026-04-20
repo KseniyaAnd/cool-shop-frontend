@@ -1,6 +1,6 @@
 import { CurrencyPipe } from '@angular/common';
 import { Component, input } from '@angular/core';
-import { Product } from '../../services/products';
+import { Product } from '../../types/interfaces/product.interface';
 
 @Component({
   selector: 'app-product-card',

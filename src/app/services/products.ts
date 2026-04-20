@@ -1,15 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-
-export interface Product {
-  id?: number;
-  name: string;
-  price: number;
-  oldPrice: number;
-  image: string;
-  rating: number;
-  inStock: boolean;
-}
+import { Product } from '../types/interfaces/product.interface';
 
 @Injectable({
   providedIn: 'root',
