@@ -1,11 +1,15 @@
-import { Component, input } from '@angular/core';
+import { Component, input, signal } from '@angular/core';
 
 @Component({
   selector: 'app-logo',
   imports: [],
   template: `
     <a href="/" class="flex items-center">
-      <img [src]="logoSrc()" [alt]="logoAlt()" class="h-10 w-auto object-contain" />
+      <img 
+        [src]="logoSrc()" 
+        [alt]="logoAlt()"
+        class="h-10 w-auto object-contain"
+      />
     </a>
   `,
   styleUrl: './logo.scss',
